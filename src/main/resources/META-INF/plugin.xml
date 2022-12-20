@@ -22,6 +22,11 @@
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij"/>
+
+    <applicationListeners>
+        <listener class="com.tatia.helper.picture.OpeningListener" topic="com.intellij.openapi.project.ProjectManagerListener"/>
+    </applicationListeners>
+
     <actions>
         <action id="com.tatia.helper.searchplugin.SearchAction" class="com.tatia.helper.searchplugin.SearchAction"
                 text="Search Action" description="Select text and search it in stackoverflow">

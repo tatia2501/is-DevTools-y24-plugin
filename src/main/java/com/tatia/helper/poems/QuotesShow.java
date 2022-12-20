@@ -26,7 +26,7 @@ public class QuotesShow  extends AnAction {
         String[] names = {"", "Carol Burnett", "Albert Einstein", "Marva Collins", "Thomas Edison", "Mark Twain", "Estee Lauder"};
 
         JFrame frame = new JFrame();
-        var author = (String)JOptionPane.showInputDialog(frame, "Write author name", "Author", JOptionPane.QUESTION_MESSAGE, Messages.getInformationIcon(), names, names[0]);
+        var author = (String)JOptionPane.showInputDialog(frame, "Choose author name", "Author", JOptionPane.QUESTION_MESSAGE, Messages.getInformationIcon(), names, names[0]);
 
         if (Objects.equals(author, "")){
             Notification notification = GROUP_DISPLAY_ID_INFO.createNotification("You must choose something", NotificationType.ERROR);
