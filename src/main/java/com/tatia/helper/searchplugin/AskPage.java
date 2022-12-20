@@ -5,6 +5,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.editor.Editor;
+import com.intellij.openapi.ui.Messages;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -24,8 +25,11 @@ public class AskPage  extends AnAction{
             clipboard.setContents(selection, selection);
         }
 
-        String url = "https://stackoverflow.com/questions/ask";
-        BrowserUtil.browse(url);
+        var mess = Messages.showYesNoDialog("Do you want to go to browser?", "Go to Browser", Messages.getQuestionIcon());
+        if (mess == 0) {
+            String url = "https://stackoverflow.com/questions/ask";
+            BrowserUtil.browse(url);
+        }
     }
 
     @Override

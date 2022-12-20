@@ -20,17 +20,14 @@ public class SearchAction extends AnAction {
         String selectedText = editor.getSelectionModel().getSelectedText();
 
         if (selectedText != null) {
-            String encoded = "";
+            var mess = Messages.showYesNoDialog("Do you want to go to browser?", "Go to Browser", Messages.getQuestionIcon());
 
-            try {
-                encoded = URLEncoder.encode(selectedText, StandardCharsets.UTF_8.toString());
-            } catch (UnsupportedEncodingException e) {
-                throw new RuntimeException(e);
+            if (mess == 0) {
+                String encoded = "";
+                encoded = URLEncoder.encode(selectedText, StandardCharsets.UTF_8);
+                String url = String.format("https://stackoverflow.com/search?q=%s", encoded);
+                BrowserUtil.browse(url);
             }
-
-            String url = String.format("https://stackoverflow.com/search?q=%s", encoded);
-
-            BrowserUtil.browse(url);
         } else {
             Messages.showMessageDialog("Please, select some text", "Search Action", Messages.getInformationIcon());
         }
