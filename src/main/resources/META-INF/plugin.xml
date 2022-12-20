@@ -32,5 +32,9 @@
                 description="This plugin will send you to the Stackoverflow, where you'll be able to ask your question">
             <keyboard-shortcut keymap="$default" first-keystroke="ctrl BACK_SLASH" second-keystroke="ctrl R"/>
         </action>
+        <action id="com.tatia.helper.poems.QuotesShow" class="com.tatia.helper.poems.QuotesShow" text="QuotesShow"
+                description="Showes a quote of choosen author">
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl BACK_SLASH" second-keystroke="ctrl E"/>
+        </action>
     </actions>
 </idea-plugin>
